@@ -1,0 +1,90 @@
+# ═══════════════════════════════════════════════════════════════
+# PakMind .gitignore — CRITICAL: .env files contain real API keys
+# and must NEVER be committed to a public repository.
+# ═══════════════════════════════════════════════════════════════
+
+# ── SECRETS (never commit) ──
+.env
+.env.local
+.env.*.local
+*.env
+!.env.example
+
+# ── Legacy module folders ──
+# The pre-consolidation standalone apps (PakGuide, PakWatch, PakSholar)
+# were merged into the unified `backend/` + `frontend/` apps.
+# They are fully superseded — excluded to keep the repo clean.
+# Remove these 3 lines if you want to keep the historical code.
+/PakGuide/
+/PakWatch/
+/PakSholar/
+
+# ── Python / backend ──
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+*.egg-info/
+.eggs/
+.installed.cfg
+*.egg
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ── Node / frontend ──
+node_modules/
+.next/
+out/
+build/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+*.tsbuildinfo
+next-env.d.ts
+
+# ── IDE / editor ──
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# ── OS artifacts ──
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ── Logs / misc ──
+*.log
+logs/
+*.pid
+*.seed
+*.tmp
+.cache/
+coverage/
+.nyc_output/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ── Generated assets ──
+*.pdf.tmp
+uploads/
+tmp/
