@@ -22,12 +22,12 @@ import { HotTopics } from "@/components/watch/HotTopics";
 function mapHotTopicToDigest(ht: HotTopic): TopicDigest {
   return {
     topic: ht.topic,
-    query: ht.topic,
-    answer: ht.summary,
-    what_changed: ht.key_changes?.join("; ") ?? null,
-    who_affected: ht.affected_groups?.join(", ") ?? null,
-    effective_date: null,
-    confidence: "medium",
+    query: ht.query || ht.topic,
+    answer: ht.answer,
+    what_changed: ht.what_changed,
+    who_affected: ht.who_affected,
+    effective_date: ht.effective_date,
+    confidence: ht.confidence,
     generated_at: ht.generated_at,
   };
 }
@@ -58,7 +58,7 @@ export default function PakWatchPage() {
         filters.province !== "All" ? filters.province : undefined,
         20,
       );
-      let updates = (data.results || []) as unknown as GovernmentUpdate[];
+      let updates = (data.updates || []) as unknown as GovernmentUpdate[];
       if (filters.importance !== "All") {
         updates = updates.filter((u) => u.importance === filters.importance);
       }
