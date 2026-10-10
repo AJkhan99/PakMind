@@ -188,7 +188,7 @@ export default function PakMindHome() {
 
         {/* ─── Footer ─── */}
         <footer className="mt-auto pt-16 pb-6 text-center text-xs text-slate-600">
-          PakMind &middot; Built for Pakistan &middot; Powered by Gemini AI
+          PakMind &middot; Built for Pakistan &middot; 
         </footer>
       </main>
     </>
